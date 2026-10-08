@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A focused daily task planner for getting meaningful work done.">
+    <title>Daymark | Daily task planner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <main class="app-shell">
+        <header class="topbar">
+            <a class="brand" href="index.html" aria-label="Daymark home">
+                <span class="brand-mark" aria-hidden="true">D</span>
+                <span>daymark</span>
+            </a>
+            <div class="profile-chip">
+                <span class="profile-avatar" id="profileAvatar" aria-hidden="true">ST</span>
+                <span class="profile-copy">
+                    <strong id="profileName">Sagara Triguna</strong>
+                    <small id="profileRole">Frontend Developer</small>
+                </span>
+            </div>
+        </header>
+
+        <section class="welcome-panel" aria-labelledby="pageTitle">
+            <div>
+                <p class="eyebrow" id="currentDay">FRIDAY</p>
+                <h1 id="pageTitle">Make today count.</h1>
+                <p class="date-label" id="currentDate">August 28, 2026</p>
+            </div>
+            <div class="focus-note" aria-label="Daily focus">
+                <span class="focus-dot" aria-hidden="true"></span>
+                <span>Stay focused</span>
+            </div>
+        </section>
+
+        <section class="composer-section" aria-labelledby="composerTitle">
+            <div class="section-heading compact-heading">
+                <div>
+                    <p class="eyebrow">PLAN A TASK</p>
+                    <h2 id="composerTitle">What needs your attention?</h2>
+                </div>
+                <span class="keyboard-hint">01</span>
+            </div>
+            <form class="task-form" id="taskForm">
+                <div class="field-group">
+                    <label for="taskTitle">Task description</label>
+                    <textarea id="taskTitle" name="taskTitle" rows="3" maxlength="240" placeholder="Write down the next useful thing..."></textarea>
+                    <p class="form-feedback" id="formFeedback" role="alert" aria-live="polite"></p>
+                </div>
+                <div class="form-controls">
+                    <fieldset class="priority-fieldset">
+                        <legend>Priority</legend>
+                        <div class="priority-options">
+                            <label class="priority-option priority-low">
+                                <input type="radio" name="priority" value="low" checked>
+                                <span>Low</span>
+                            </label>
+                            <label class="priority-option priority-medium">
+                                <input type="radio" name="priority" value="medium">
+                                <span>Medium</span>
+                            </label>
+                            <label class="priority-option priority-high">
+                                <input type="radio" name="priority" value="high">
+                                <span>High</span>
+                            </label>
+                        </div>
+                    </fieldset>
+                    <button class="primary-button" type="submit">
+                        <span>Add task</span>
+                        <span class="button-arrow" aria-hidden="true">&#8599;</span>
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <div class="task-board">
+            <section class="task-section" aria-labelledby="todoTitle">
+                <div class="section-heading">
+                    <div class="heading-with-count">
+                        <p class="eyebrow">IN PROGRESS</p>
+                        <h2 id="todoTitle">To do <span class="count-badge" id="todoCount">0</span></h2>
+                    </div>
+                    <span class="section-index">02</span>
+                </div>
+                <div class="task-list" id="todoList"></div>
+            </section>
+
+            <section class="task-section done-section" aria-labelledby="doneTitle">
+                <div class="section-heading">
+                    <div class="heading-with-count">
+                        <p class="eyebrow">WRAPPED UP</p>
+                        <h2 id="doneTitle">Done <span class="count-badge done-count" id="doneCount">0</span></h2>
+                    </div>
+                    <span class="section-index">03</span>
+                </div>
+                <div class="task-list" id="doneList"></div>
+            </section>
+        </div>
+
+        <footer class="app-footer">
+            <p><span class="footer-line" aria-hidden="true"></span> Small steps, meaningful progress.</p>
+            <button class="delete-all-button" id="deleteAllButton" type="button">Delete all <span aria-hidden="true">&#8599;</span></button>
+        </footer>
+    </main>
+</body>
+</html>
